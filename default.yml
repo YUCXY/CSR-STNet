@@ -1,0 +1,29 @@
+general:
+  dataset: colopair
+  save_dir: exp
+  num_workers: 8
+  epochs: 100
+spatial_extractor:
+  sequence_length: 1
+  train_batch_size: 100
+  val_batch_size: 100
+  backbone: resnet18
+  sgd_lr: 5.0e-4
+  sgd_momentum: 0.9
+  sgd_weight_decay: 5.0e-4
+  sgd_dampening: 0
+  use_nesterov: False
+  output_feats: True
+  cl_lambda: 0.01
+  cl_lr: 0.001
+save_features:
+  get_feats: True
+  sequence_length: 1
+  val_batch_size: 100
+temporal_extractor:
+  adam_lr: 5.0e-4
+
+dataset_dirs:
+  coloseg:
+    img_path: ./data/colopair/images
+    label_path: ./data/colopair/labels
